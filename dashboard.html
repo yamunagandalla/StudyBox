@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Poppins',sans-serif;background:#0a0a0f;color:#fff;}
+
+    .navbar{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:20px 60px;background:#0f0f1a;
+    }
+
+    .logo{font-family:'Orbitron';font-size:26px;}
+    .logo span{color:#00f5ff;}
+
+    .dashboard{
+      padding:40px 60px;
+    }
+
+    .welcome{
+      margin-bottom:30px;
+    }
+
+    .welcome h1{
+      font-size:32px;
+      font-family:'Orbitron';
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:30px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.05);
+      padding:30px;
+      border-radius:15px;
+      transition:0.3s;
+      cursor:pointer;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 20px rgba(0,245,255,0.4);
+    }
+
+    .card h3{color:#00f5ff;margin-bottom:10px;}
+    .card p{color:#aaa;}
+
+    .progress-section{
+      margin-top:50px;
+    }
+
+    .progress-bar{
+      background:#222;
+      border-radius:20px;
+      overflow:hidden;
+      margin-top:10px;
+    }
+
+    .progress{
+      height:12px;
+      width:60%;
+      background:#00f5ff;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#0f0f1a;
+      color:#777;
+      margin-top:50px;
+    }
+  </style>
+</head>
+<body>
+	
+  <script src="script.js"></script>
+  <nav class="navbar">
+    <div class="logo">Study <span>Box</span></div>
+  </nav>
+
+  <section class="dashboard">
+
+    <div class="welcome">
+      <h1>Welcome Back, Student 👋</h1>
+      <p style="color:#aaa;">Continue your learning journey</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>📚 My Courses</h3>
+        <p>Access all enrolled courses</p>
+      </div>
+
+      <div class="card">
+        <h3>🧪 Practice Labs</h3>
+        <p>Hands-on coding & cybersecurity labs</p>
+      </div>
+
+      <div class="card">
+        <h3>📊 Progress</h3>
+        <p>Track your performance</p>
+      </div>
+    </div>
+
+    <div class="progress-section">
+      <h2 style="color:#00f5ff;">Overall Progress</h2>
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+    </div>
+    
+    <h3 id="roleText">Student</h3>
+<button onclick="updateRole()">Update Role</button>
+
+<h3 id="message">Welcome Message</h3>
+<button onclick="changeMessage()">Change Message</button>
+
+<button onclick="toggleTheme()">Toggle Theme</button>
+
+<h3>Name: <span id="studentName"></span></h3>
+<h3>Course: <span id="studentCourse"></span></h3>
+<button onclick="showStudent()">Show Student</button>
+
+<h3>Progress: <span id="progressText">60%</span></h3>
+<button onclick="student.updateProgress()">Increase Progress</button>
+
+<hr>
+
+<button onclick="loginAlert()">Login Alert</button>
+<button onclick="confirmAction()">Confirm</button>
+<p id="confirmResult"></p>
+
+<button onclick="askName()">Enter Name</button>
+<p id="promptResult"></p>
+
+<hr>
+
+<button id="btnClick">Click Me</button>
+<p id="eventText"></p>
+
+<div id="hoverBox" style="padding:20px;background:#222;margin-top:10px;">
+    Hover Me
+</div>
+
+<input type="text" id="nameInput" placeholder="Type something">
+<p id="liveText"></p>
+
+  </section>
+
+  <footer>
+    <p>© 2025 StudyBox Dashboard</p>
+  </footer>
+
+</body>
+</html>
+
